@@ -8,7 +8,6 @@ var displayUser = function(info, repos) {
   var username = info[0];
   var name = info[1];
   var location = info[2];
-  console.log(name)
   if(name !== null && location !== null){
     $('#user-info').append("<img src='" + img + "'><h3>" + username + "</h3><p>" + name + "<br>" + location +  "</p>");
   } else {
