@@ -6,7 +6,8 @@
 
 ## Description
 
-This web app uses the GitHub API to allow users to search Github by username. It then shows the image, name, location, and repositories for that account. 
+This web app uses the GitHub API to allow users to search Github by username. It then shows the image, name, location, and repositories for that account.
+<img src="screenshot.png" alt="a screenshot of the site">
 
 ## Setup/Installation Requirements
 
