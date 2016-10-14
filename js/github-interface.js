@@ -9,6 +9,7 @@ $(document).ready(function() {
   $('#form').submit(function(event) {
     event.preventDefault();
     var username = $('#username').val();
-    newGithub.getUser(username);
+    var all_info = newGithub.getUser(username);
+    console.log(all_info);
   });
 });

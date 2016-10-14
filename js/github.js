@@ -15,7 +15,7 @@ Github.prototype.getUser = function(username) {
     var image = response.avatar_url;
     var followers = response.followers;
     var following = response.following;
-    info.push(user, name, location, bio, image, followers, following)
+    info.push(user, name, location, bio, image, followers, following);
     // console.log(info);
   }).fail(function(error){
     console.log(error.response.JSON.message);
@@ -23,15 +23,20 @@ Github.prototype.getUser = function(username) {
 
   $.get('https://api.github.com/users/' + username + '/repos').then(function(result) {
     var repos = result;
-    console.log(repos);
     repos.forEach(function(repo) {
       var repoName = repo.name;
       var description = repo.description;
-      // console.log(description);
+      var thisRepo = [repoName, description];
+      repoInfo.push(thisRepo);
+      // info.push(repoInfo);
     });
-  }).fail(function(fail){
-    console.log(fail.response.JSON.message);
   });
+  // console.log(info);
+  // console.log(repoInfo);
+  return [
+    info,
+    repoInfo
+  ];
 };
 
 // Github.prototype.getUserRepos = function(username) {
