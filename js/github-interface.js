@@ -4,12 +4,24 @@ var displayUser = function(info, repos) {
   $('h2').show();
   $('#user-info').empty();
   $('#user-repos').empty();
-  $('#user-info').append("<br><br><div class='col-md-3 col-md-offset-3'><img src='" + info[3] + "'></div>" + "<div class='col-md-3'><h3>" + info[0] + "</h3><p>" + info[1] + "<br>" + info[2] +  "</p></div>");
+  var img = info[3];
+  var username = info[0];
+  var name = info[1];
+  var location = info[2];
+  console.log(name)
+  if(name !== null && location !== null){
+    $('#user-info').append("<img src='" + img + "'><h3>" + username + "</h3><p>" + name + "<br>" + location +  "</p>");
+  } else {
+    $('#user-info').append("<img src='" + img + "'>" + "<h3>" + username + "</h3>");
+  }
+
   for (var i = 0; i < repos.length; i++) {
-    if(repos[i][1] === null){
-      repos[i][1] = "";
+    var title = repos[i][0];
+    var description = repos[i][1];
+    if(description === null){
+      description = "";
     }
-    $('#user-repos').append("<br><div class='col-md-10 col-md-offset-1 well'><h4>" + repos[i][0] + "</h4><h5>" + repos[i][1] + "</h5></div>");
+    $('#user-repos').append("<br><div class='col-md-11 well'><h4>" + title + "</h4><h5>" + description + "</h5></div>");
   };
 };
 
