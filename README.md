@@ -1,6 +1,6 @@
-# Template
+# GitHub User Lookup
 
-#### _10-11-16_
+#### _10-14-16_
 
 #### By _**Aimen Khakwani**_
 

@@ -7,9 +7,6 @@ var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var buildProduction = utilities.env.production;
-var googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyAN_hkUsvtFGwi-aUgW-9hXR_9CPIHYjLg'
-});
 var lib = require('bower-files')({
   "overrides":{
     "bootstrap" : {
