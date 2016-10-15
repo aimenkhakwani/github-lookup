@@ -8,11 +8,12 @@ Github.prototype.getUser = function(username, displayFunction) {
   var repoInfo = [];
   // get request to get user info
   $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response) {
-    var user = response.login;
-    var name = response.name;
-    var location = response.location;
-    var image = response.avatar_url;
-    info.push(user, name, location, image);
+    // console.log(response);
+      var user = response.login;
+      var name = response.name;
+      var location = response.location;
+      var image = response.avatar_url;
+      info.push(user, name, location, image);
 
     // second get request to get user repos
     $.get('https://api.github.com/users/' + username + '/repos?access_token=' + apiKey).then(function(result) {
@@ -24,6 +25,12 @@ Github.prototype.getUser = function(username, displayFunction) {
       });
       displayFunction(info, repoInfo);
     });
+  }).fail(function(error){
+    $('#error').empty();
+    $('#user-info').empty();
+    $('#user-repos').empty();
+    $('h2').hide();
+    $('#error').append("Sorry, there is no GitHub account with that username");
   });
 };
 
