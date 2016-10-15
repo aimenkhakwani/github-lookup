@@ -21,7 +21,8 @@ Github.prototype.getUser = function(username, displayFunction) {
       repos.forEach(function(repo) {
         var repoName = repo.name;
         var description = repo.description;
-        repoInfo.push([repoName, description]);
+        var language = repo.language;
+        repoInfo.push([repoName, description, language]);
       });
       displayFunction(info, repoInfo);
     });
