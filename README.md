@@ -20,6 +20,12 @@ This web app uses the GitHub API to allow users to search Github by username. It
 * Build the files by running $ gulp build
 * Open index.html to view application in browser
 
+## What's Next
+
+* Add an into page beside just the header and form
+* Add a location icon next to each user's city/location
+* Add clear function to remove repetitive jQuery code
+
 ## Known Bugs
 
 _None_
